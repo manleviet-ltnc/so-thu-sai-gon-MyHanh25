@@ -1,0 +1,8 @@
+C:\Users\USER\Documents\GitHub\so-thu-sai-gon-MyHanh25\Sở Thú SGon\Sở Thú SGon\bin\Debug\Sở Thú SGon.exe
+C:\Users\USER\Documents\GitHub\so-thu-sai-gon-MyHanh25\Sở Thú SGon\Sở Thú SGon\bin\Debug\Sở Thú SGon.pdb
+C:\Users\USER\Documents\GitHub\so-thu-sai-gon-MyHanh25\Sở Thú SGon\Sở Thú SGon\obj\x86\Debug\Sở_Thú_SGon.Form1.resources
+C:\Users\USER\Documents\GitHub\so-thu-sai-gon-MyHanh25\Sở Thú SGon\Sở Thú SGon\obj\x86\Debug\Sở_Thú_SGon.Properties.Resources.resources
+C:\Users\USER\Documents\GitHub\so-thu-sai-gon-MyHanh25\Sở Thú SGon\Sở Thú SGon\obj\x86\Debug\Sở Thú SGon.csproj.GenerateResource.Cache
+C:\Users\USER\Documents\GitHub\so-thu-sai-gon-MyHanh25\Sở Thú SGon\Sở Thú SGon\obj\x86\Debug\Sở Thú SGon.exe
+C:\Users\USER\Documents\GitHub\so-thu-sai-gon-MyHanh25\Sở Thú SGon\Sở Thú SGon\obj\x86\Debug\Sở Thú SGon.pdb
+C:\Users\USER\Documents\GitHub\so-thu-sai-gon-MyHanh25\Sở Thú SGon\Sở Thú SGon\obj\x86\Debug\Sở Thú SGon.csprojResolveAssemblyReference.cache
