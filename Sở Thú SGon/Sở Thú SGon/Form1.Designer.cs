@@ -230,27 +230,27 @@
             // 
             this.mnuCopy.Name = "mnuCopy";
             this.mnuCopy.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.mnuCopy.Size = new System.Drawing.Size(152, 22);
+            this.mnuCopy.Size = new System.Drawing.Size(135, 22);
             this.mnuCopy.Text = "sao";
             // 
             // mnuCut
             // 
             this.mnuCut.Name = "mnuCut";
             this.mnuCut.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.mnuCut.Size = new System.Drawing.Size(152, 22);
+            this.mnuCut.Size = new System.Drawing.Size(135, 22);
             this.mnuCut.Text = "cắt";
             // 
             // mnuPaste
             // 
             this.mnuPaste.Name = "mnuPaste";
             this.mnuPaste.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.mnuPaste.Size = new System.Drawing.Size(152, 22);
+            this.mnuPaste.Size = new System.Drawing.Size(135, 22);
             this.mnuPaste.Text = "dán";
             // 
             // xóaToolStripMenuItem
             // 
             this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
-            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.xóaToolStripMenuItem.Text = "xóa";
             this.xóaToolStripMenuItem.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -273,8 +273,8 @@
             this.MinimumSize = new System.Drawing.Size(281, 214);
             this.Name = "Form1";
             this.Text = "Sở thú Sài Gòn";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load_1);
-            
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
