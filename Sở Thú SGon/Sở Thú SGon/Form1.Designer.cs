@@ -39,6 +39,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTime = new System.Windows.Forms.Label();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.hồSơToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuLoad = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +50,7 @@
             this.mnuCopy = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCut = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPaste = new System.Windows.Forms.ToolStripMenuItem();
+            this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -79,7 +81,7 @@
             this.lstThuMoi.FormattingEnabled = true;
             this.lstThuMoi.Location = new System.Drawing.Point(3, 16);
             this.lstThuMoi.Name = "lstThuMoi";
-            this.lstThuMoi.Size = new System.Drawing.Size(121, 164);
+            this.lstThuMoi.Size = new System.Drawing.Size(121, 104);
             this.lstThuMoi.TabIndex = 2;
             this.toolTip1.SetToolTip(this.lstThuMoi, "Ấn chuột và kéo sang Danh Sách Thú để tạo Sở Thú");
             this.lstThuMoi.DragEnter += new System.Windows.Forms.DragEventHandler(this.ListBox_DragEnter);
@@ -92,7 +94,7 @@
             this.lstDanhSach.FormattingEnabled = true;
             this.lstDanhSach.Location = new System.Drawing.Point(130, 16);
             this.lstDanhSach.Name = "lstDanhSach";
-            this.lstDanhSach.Size = new System.Drawing.Size(132, 164);
+            this.lstDanhSach.Size = new System.Drawing.Size(132, 104);
             this.lstDanhSach.TabIndex = 3;
             this.lstDanhSach.DragDrop += new System.Windows.Forms.DragEventHandler(this.lstDanhSach_DragDrop);
             this.lstDanhSach.DragEnter += new System.Windows.Forms.DragEventHandler(this.ListBox_DragEnter);
@@ -112,7 +114,7 @@
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.Location = new System.Drawing.Point(237, 229);
+            this.btnSave.Location = new System.Drawing.Point(237, 150);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(25, 23);
             this.btnSave.TabIndex = 8;
@@ -131,26 +133,37 @@
             this.tableLayoutPanel1.Controls.Add(this.lstThuMoi, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lstDanhSach, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblTime, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btnXoa, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.34473F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.82763F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.82763F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(265, 270);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.0289F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.07514F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(265, 180);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
             // lblTime
             // 
             this.lblTime.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.lblTime, 2);
-            this.lblTime.Location = new System.Drawing.Point(3, 183);
+            this.lblTime.Location = new System.Drawing.Point(3, 123);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(35, 13);
             this.lblTime.TabIndex = 6;
             this.lblTime.Text = "label3";
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Location = new System.Drawing.Point(3, 150);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(46, 23);
+            this.btnXoa.TabIndex = 8;
+            this.btnXoa.Text = "Delete";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // menuStrip1
             // 
@@ -207,7 +220,8 @@
             this.sửaĐổiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuCopy,
             this.mnuCut,
-            this.mnuPaste});
+            this.mnuPaste,
+            this.xóaToolStripMenuItem});
             this.sửaĐổiToolStripMenuItem.Name = "sửaĐổiToolStripMenuItem";
             this.sửaĐổiToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
             this.sửaĐổiToolStripMenuItem.Text = "Sửa đổi";
@@ -216,22 +230,29 @@
             // 
             this.mnuCopy.Name = "mnuCopy";
             this.mnuCopy.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.mnuCopy.Size = new System.Drawing.Size(135, 22);
+            this.mnuCopy.Size = new System.Drawing.Size(152, 22);
             this.mnuCopy.Text = "sao";
             // 
             // mnuCut
             // 
             this.mnuCut.Name = "mnuCut";
             this.mnuCut.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.mnuCut.Size = new System.Drawing.Size(135, 22);
+            this.mnuCut.Size = new System.Drawing.Size(152, 22);
             this.mnuCut.Text = "cắt";
             // 
             // mnuPaste
             // 
             this.mnuPaste.Name = "mnuPaste";
             this.mnuPaste.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.mnuPaste.Size = new System.Drawing.Size(135, 22);
+            this.mnuPaste.Size = new System.Drawing.Size(152, 22);
             this.mnuPaste.Text = "dán";
+            // 
+            // xóaToolStripMenuItem
+            // 
+            this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
+            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.xóaToolStripMenuItem.Text = "xóa";
+            this.xóaToolStripMenuItem.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // timer1
             // 
@@ -242,7 +263,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(265, 294);
+            this.ClientSize = new System.Drawing.Size(265, 204);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.btnChon);
             this.Controls.Add(this.menuStrip1);
@@ -253,6 +274,7 @@
             this.Name = "Form1";
             this.Text = "Sở thú Sài Gòn";
             this.Load += new System.EventHandler(this.Form1_Load_1);
+            
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -284,6 +306,8 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem;
+        private System.Windows.Forms.Button btnXoa;
     }
 }
 
